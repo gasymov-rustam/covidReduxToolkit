@@ -1,0 +1,41 @@
+.wrapper {
+  display: flex;
+  gap: 4px;
+}
+
+.sortBtn {
+  width: 15%;
+  padding: 20px 8px;
+  cursor: pointer;
+  border: 0.2px solid rgb(61, 61, 61);
+  color: lightgray;
+  background: inherit;
+  overflow: hidden;
+  font-size: 0.8em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.active {
+  background: #292b33;
+}
+
+.wrapper > th:nth-child(1) {
+  width: 40%;
+  padding-left: 10px;
+}
+
+.sortBtn > span {
+  padding: 0 4px;
+  white-space: nowrap;
+  padding: 0;
+}
+
+.sortBtn i {
+  font-size: 1.4em;
+  text-align: left;
+}
+span {
+  margin-right: 5px;
+}

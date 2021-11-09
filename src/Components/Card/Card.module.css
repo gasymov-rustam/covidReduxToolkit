@@ -1,0 +1,64 @@
+.wrapperData {
+  display: flex;
+  border-bottom: 0.2px solid rgb(61, 61, 61);
+  background: #202128;
+  margin-top: 10px;
+}
+
+.wrapperData:hover {
+  background: #292b33;
+  cursor: pointer;
+}
+
+.wrapperData > td {
+  padding: 20px 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.wrapperDataCountry {
+  width: 40%;
+  color: darkgray;
+}
+
+.wrapperDataConfirmed {
+  color: yellow;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  width: 15%;
+  /* justify-content: flex-end; */
+}
+
+.wrapperDataDeaths {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  width: 15%;
+}
+
+.wrapperDataRecovered {
+  color: green;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  width: 15%;
+}
+
+.wrapperDataExisting {
+  color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 15%;
+}
+
+.wrapperDataDelta {
+  font-size: 0.8em;
+}

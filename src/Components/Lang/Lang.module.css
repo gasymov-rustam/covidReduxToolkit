@@ -1,0 +1,19 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn {
+  padding: 8px 16px;
+  margin: 4px;
+  color: lightgray;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+  background: #202128;
+}
+
+.active {
+  background: #292b33;
+}

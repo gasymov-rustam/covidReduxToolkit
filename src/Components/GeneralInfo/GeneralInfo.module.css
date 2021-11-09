@@ -1,0 +1,48 @@
+.generalInformation {
+  display: flex;
+  margin-bottom: 10px;
+  background: #292b33;
+}
+
+.confirmed {
+  color: yellow;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.deaths {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.recovered {
+  color: green;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.existing {
+  color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.generalInformation > div {
+  width: 25%;
+  font-size: 20px;
+  padding: 16px 8px;
+  gap: 10px;
+}
+
+.differnce {
+  font-size: 0.7em;
+}

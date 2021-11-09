@@ -1,0 +1,20 @@
+.wrapper {
+  display: flex;
+}
+
+.tabs {
+  width: 50%;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: lightgray;
+  padding: 16px 0;
+  cursor: pointer;
+  border: none;
+  background: inherit;
+}
+
+.active {
+  background: #292b33;
+}

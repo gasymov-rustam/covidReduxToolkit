@@ -1,0 +1,14 @@
+body {
+  background: #202128;
+}
+.container {
+  max-width: 700px;
+  width: 100%;
+  background: #202128;
+  margin: 50px auto;
+  padding: 0 16px;
+}
+
+table {
+  width: 100%;
+}
