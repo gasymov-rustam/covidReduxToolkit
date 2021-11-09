@@ -1,11 +1,21 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-export const fetchCovid = createAsyncThunk("toolkit/fetchCovid", async function () {
-  const currentDate = new Date().toJSON().split("T")[0];
-  const response = await fetch(`https://api-covid19.rnbo.gov.ua/data?to=${currentDate}`);
-  const data = await response.json();
-  return data;
-});
+export const fetchCovid = createAsyncThunk(
+  "toolkit/fetchCovid",
+  async function (_, { rejectWithValue }) {
+    try {
+      const currentDate = new Date().toJSON().split("T")[0];
+      const response = await fetch(`https://api-covid19.frnbo.gov.ua/data?to=${currentDate}`);
+      if (!response.ok) {
+        throw new Error(`Server wasnt found waith status ===>>>> ${response.status}`);
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
 
 const toolkitSlice = createSlice({
   name: "toolkit",
@@ -47,7 +57,10 @@ const toolkitSlice = createSlice({
       state.status = "resolved";
       state.covid = action.payload;
     },
-    [fetchCovid.rejected]: (state, { payload }) => {},
+    [fetchCovid.rejected]: (state, action) => {
+      state.status = "rejected";
+      state.error = action.payload;
+    },
   },
 });
 export const { changeLang, changeSearchQuery, changeCurrentRegion, changeSortParams } =

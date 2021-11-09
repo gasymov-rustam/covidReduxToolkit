@@ -12,3 +12,10 @@ body {
 table {
   width: 100%;
 }
+
+.error-status{
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  margin: 50px auto;
+}

@@ -13,6 +13,7 @@ import Load from "./Components/Load/Load";
 
 function App() {
   const status = useSelector(toolkitState).status;
+  const error = useSelector(toolkitState).error;
 
   return (
     <>
@@ -22,13 +23,14 @@ function App() {
         <Header title="CORONA" />
         <BtnTabs />
         <GeneralInfo />
-        <Search />
+        <Search />  
         <table>
           <thead>
             <TableHead />
           </thead>
           <CardList />
         </table>
+        {error && <h2 className="error-status">{error}</h2>}
       </div>
     </>
   );
