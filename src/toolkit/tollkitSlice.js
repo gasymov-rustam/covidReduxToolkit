@@ -5,7 +5,7 @@ export const fetchCovid = createAsyncThunk(
   async function (_, { rejectWithValue }) {
     try {
       const currentDate = new Date().toJSON().split("T")[0];
-      const response = await fetch(`https://api-covid19.frnbo.gov.ua/data?to=${currentDate}`);
+      const response = await fetch(`https://api-covid19.rnbo.1gov.ua/data?to=${currentDate}`);
       if (!response.ok) {
         throw new Error(`Server wasnt found waith status ===>>>> ${response.status}`);
       }
@@ -16,6 +16,11 @@ export const fetchCovid = createAsyncThunk(
     }
   }
 );
+
+const setError = (state, action) => {
+  state.status = "rejected";
+  state.error = action.payload;
+}
 
 const toolkitSlice = createSlice({
   name: "toolkit",
@@ -57,10 +62,7 @@ const toolkitSlice = createSlice({
       state.status = "resolved";
       state.covid = action.payload;
     },
-    [fetchCovid.rejected]: (state, action) => {
-      state.status = "rejected";
-      state.error = action.payload;
-    },
+    [fetchCovid.rejected]: setError,
   },
 });
 export const { changeLang, changeSearchQuery, changeCurrentRegion, changeSortParams } =
