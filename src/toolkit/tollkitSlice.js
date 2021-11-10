@@ -5,7 +5,7 @@ export const fetchCovid = createAsyncThunk(
   async function (_, { rejectWithValue }) {
     try {
       const currentDate = new Date().toJSON().split("T")[0];
-      const response = await fetch(`https://api-covid19.rnbo.1gov.ua/data?to=${currentDate}`);
+      const response = await fetch(`https://api-covid19.rnbo.gov.ua1/data?to=${currentDate}`);
       if (!response.ok) {
         throw new Error(`Server wasnt found waith status ===>>>> ${response.status}`);
       }
